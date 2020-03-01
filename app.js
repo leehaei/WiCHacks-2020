@@ -9,6 +9,10 @@ const auth = require('./auth');
 require('dotenv').config();
 var WEGMANS_KEY = process.env.WEGMANS_KEY;
 
+var data;
+var recommend;
+var info;
+
 var app = express();
 
 app.use(session({
@@ -61,6 +65,10 @@ app.get('/loginSignUp', function(request, response) {
     response.render('loginSignUp');
 });
 
+app.get('/datapage', function(request, response) {
+  response.render('datapage');
+});
+
 
 app.post('/signup', function(request, response) {
   response.render('datapage');
@@ -68,7 +76,7 @@ app.post('/signup', function(request, response) {
 
 //Authenticates login
 app.post('/login', function(request, response) {
-    response.render('datapage');
+  response.render('datapage');
 });
 
 //Authenticates signup
